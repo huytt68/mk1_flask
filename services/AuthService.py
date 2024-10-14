@@ -18,7 +18,7 @@ class AuthService:
         
         new_user = User(name=data['name'], email=data['email'])
         new_user.set_password(data['password'])
-        new_user.status = 0  
+        new_user.status = 0
         db.session.add(new_user)
         db.session.commit()
 

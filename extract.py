@@ -39,7 +39,7 @@ def ScrapingInstagram(list_username):
     response = json.dumps(outputs, ensure_ascii=False, indent=4)
     return response
 # def GetDataStory(list_username):
-   
+
 #     # Story Count
 #     # Story Content
 #     data = get_data_story(list_username)

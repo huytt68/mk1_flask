@@ -2,7 +2,6 @@
 
 from flask import Blueprint, request, jsonify
 from services.AuthService import AuthService
-from common.error import generate_error_response 
 
 auth_bp = Blueprint('auth', __name__, url_prefix='/auth')
 
@@ -15,6 +14,7 @@ def register():
 
 @auth_bp.route('/login', methods=['POST'])
 def login():
+
     data = request.get_json()
     result = AuthService.login(data)
 
@@ -25,13 +25,13 @@ def verify_email():
     token = request.args.get('token')
     result = AuthService.verify_email(token)
 
-    return jsonify(result), result['status_code']
+    return jsonify(result), result['status_code'] 
 
 @auth_bp.route('/user', methods=['GET'])
 def get_user_info():
     email = request.args.get('email')
     if email:
-      result = AuthService.get_user_info(email)
+        result = AuthService.get_user_info(email)
     else:
-      result = AuthService.get_all_user()
+        result = AuthService.get_all_user()
     return jsonify(result), result['status_code']

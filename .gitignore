@@ -16,5 +16,6 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
+
 # ignore flask files
 __pycache__

@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
     talent_jobs:
         container_name: talent_jobs

@@ -1,6 +1,7 @@
 from flask import Flask
-from controllers.ScrapingController import scraping
-from controllers.AuthController import auth_bp
+from controllers.scraping_controller import scraping
+from controllers.auth_controller import auth_bp
+from controllers.product_controller import product_bp
 from models.databaseConfig import db
 import os
 from dotenv import load_dotenv
@@ -32,6 +33,8 @@ db.init_app(app)
 # Register blueprints
 app.register_blueprint(scraping)
 app.register_blueprint(auth_bp)
+app.register_blueprint(product_bp)
+
 
 @app.route("/", methods=['GET'])
 def hello_world():
